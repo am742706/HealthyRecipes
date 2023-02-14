@@ -3,10 +3,13 @@ import { StyleSheet, Text, View, TextInput, Pressable, Image } from 'react-nativ
 import React, {useState} from 'react';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as SplashScreen from 'expo-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
 function HomeScreen({ navigation }) {
+  SplashScreen.preventAutoHideAsync();
+  setTimeout(SplashScreen.hideAsync, 2000);
   const [servingNum, setServingNum] = useState(null);
   return (
     <View style={styles.container}>
